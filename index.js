@@ -17,10 +17,21 @@ app.use("/users",userRouter);
 
 //Specific Routes Definitions
 app.get("/", (req, res) => {
-    res.render("index", { title: "Home" });
+    res.render("index", { title: "Isac's Webapp" });
 });
 app.get("/login", (req, res) => {
     res.render("login");
+});
+app.get("/about", (req, res) => {
+    res.render("about");
+});
+app.get("/register", (req, res) => {
+    res.render("register");
+});
+
+//TODO: make into own route
+app.get("/programs", (req, res) => {
+    res.render("programs");
 });
 
 //Server Activation

@@ -1,17 +1,16 @@
 extends layout
 
 block layout-content
-	h1.Banner Website
-	div.Message
-		div.Title
-			h3 lorem #{locals.title}
-			h1 Ipsum
-			h2 lorem #{locals.title}
-		span.Details Ipsum
-	div.NavButtons
-		if isAuthenticated
-			a(href="/user")
-				div.NavButton Just dive in!
-		else
-			a(href="/login")
-				div.NavButton Log in
+  div.Message
+    span I created this WebApp to: 
+    br
+    span * Learn things
+    br
+    span * Document what i have learned
+    br
+    span * Gather What I've learned in one place
+    br
+    br
+    span NOTE: The login function doesn't work    
+    //span.Details  #{locals.title}
+  div.NavButtons

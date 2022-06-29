@@ -6,9 +6,31 @@ html
 		link(rel="shortcut icon", href="/favicon.ico")
 		meta( name='viewport', content='width=device-width, initial-scale=1' )
 		meta(name="theme-color", content="#000000")
-		title #{title} | Website
+		title #{title}
 		link(rel="stylesheet", href="/style.css")
-	body
 		//-div with style: View.WelcomeView
-		div.View.WelcomeView
-			block layout-content
+	body.Bg_main
+		div.Frame 
+			div.Content
+				div.Banner2
+					div.div_left 
+						p Isac's WebbApp 
+					div.div_middle 
+						a(href="/")
+							div
+								p Home 
+						a(href="/about")
+							div 
+								p About me
+						a(href="/programs")
+							div 
+								p Programs made
+					div.div_right 
+						a(href="/login")
+							div 
+								p Sign in 
+						a(href="/register")
+							div 
+								p Sign up
+				//h1.Banner #{title}
+				block layout-content
