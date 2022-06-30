@@ -1,7 +1,8 @@
 //Required External Modules 
 const express = require("express");
 const path = require("path");
-const userRouter = require("./routes/users");
+const userRouter = require("./routes/user");
+var cookieParser = require('cookie-parser');
 
 //App Variables
 const app = express();
@@ -12,8 +13,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({extended: true}));
-app.use("/users",userRouter);
-
+app.use(cookieParser());
+app.use("/user",userRouter);
 
 //Specific Routes Definitions
 app.get("/", (req, res) => {

@@ -1,12 +1,11 @@
 extends layout
 
 block layout-content
-
     div.center
-        form(action="/users" method="POST")
+        form(action="/user" method="POST")
             //value = locals.firstName
             h3 UserName
-            input(type="text" name="userName")
+            input(type="text" name="username")
             h3 Password
             input(type="text" name="password")
-            button(type="submit").div.NavButton Submit
+            button(type="submit" name='login').div.NavButton Login
