@@ -1,9 +1,9 @@
 var moment = require('moment');  
-var mysql = require('mysql');
+var mysql = require('mysql2');
 var db = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "",
+    user: "ketoshi",
+    password: "santa",
     database: "ketoshi_db"
 });
 

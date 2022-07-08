@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 
 
 function createCookie(){
-    console.log('si')
+    res.cookie("userData", users);
     return 3
 }
 function checkCookie(){
@@ -25,12 +25,11 @@ router.post("/", (req, res) => {
         var sql = 'SELECT * FROM user WHERE username = ? AND password = ?';
         db.query(sql, [user,password], function (err, result) {
             if(err){
-                //fix same as below
                 //if (err) throw err; //GREAT DEBUG TOOL
                 res.send('Username already exists')
             }
             createCookie()
-            res.send('Logged in')
+            res.redirect(`/user/${user}`)
         });
     } else {
         //cookie + mysql
@@ -42,6 +41,7 @@ router.post("/", (req, res) => {
                 //send to register, with message notification!
                 res.send('Username already exists')
             }
+            createCookie()
             res.redirect(`/user/${user}`)
             //res.render("new", { firstName: req.body.firstName })
         })
